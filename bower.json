@@ -1,0 +1,21 @@
+{
+  "name": "vhs-nation",
+  "version": "0.1.0",
+  "authors": [
+    "Alex Milanov <alex@i4web.biz>"
+  ],
+  "description": "vhs store",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.4",
+    "font-awesome": "~4.3.0"
+  }
+}
