@@ -1,3 +1,22 @@
+
+h3 Wellcome to VHS Nation!
+
 section.content
-	h3 Hello {{ name }} Wellcome to VHS Nation!
-	input(ng-model="name") 
+	form.row
+		.col-md-8
+			input.form-control(ng-model="filters.keywords",size="40") 
+		.col-md-3
+			select.form-control(ng-model="filters.category", placeholder="Category")
+				option(value="") Category
+				option(ng-repeat="category in categories",value="{{ category.name }}") {{ category.name }}
+		.col-md-1
+			button.btn-block.btn.btn-primary(ng-click="query(filters)") Search
+
+.row
+	.col-md-3.col-sm-4.col-xs-12(ng-repeat="tape in tapes | filter: filters.keywords")
+		br
+		img(ng-src="{{ tape.picture }}",width="100%")
+		section.content
+			p: a(href="#") {{ tape.name }}
+			p {{ tape.price }}
+			p {{ tape.category }}

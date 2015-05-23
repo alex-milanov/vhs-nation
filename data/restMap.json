@@ -33,7 +33,11 @@
 					"collection": "users"
 				}
 			},
-			"tapes": {},
+			"tapes": {
+				"_meta": {
+					"searchable": ["name","category"]
+				}
+			},
 			"categories": {}
 		}
 	}

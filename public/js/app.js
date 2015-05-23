@@ -14,6 +14,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', '$locationP
 		$stateProvider
 			.state('home', {
 				url : '/',
+				controller: 'CatalogueCtrl',
 				templateUrl: '/states/home.html'
 			})
 			.state('login', {
