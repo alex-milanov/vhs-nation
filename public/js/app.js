@@ -24,6 +24,11 @@ app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', '$locationP
 				url : '/admin',
 				templateUrl: '/states/admin/index.html'
 			})
+			.state('admin.users', {
+				url : '/users',
+				controller: 'AdminUsersCtrl',
+				templateUrl: '/states/admin/users/index.html'
+			})
 
 		$locationProvider.hashPrefix('!');
 
