@@ -1,0 +1,32 @@
+
+h3 Categories Administration
+
+.row
+	.col-md-4: section.content
+		p(ng-if="category._id") Editing {{ category.name }}
+		p(ng-if="!category._id") Creating new category
+		form
+			.form-group
+				label Name
+				input.form-control(type="text",ng-model="category.name")
+			.form-group
+				label Order
+				input.form-control(type="number",ng-model="category.order")
+			button.btn.btn-block.btn-primary(ng-click="save(category)") Save
+			button.btn.btn-block.btn-default(ng-click="reset()") Reset
+
+	.col-md-8: section.content
+		table.table
+			thead
+				tr
+					th Order
+					th Name
+					th Actions
+			tbody
+				tr(ng-repeat="category in categories")
+					td {{ category.order }}
+					td {{ category.name }}
+					td
+						a.btn.btn-primary.btn-sm(ng-click="edit(category)") Edit
+						| &nbsp;
+						a.btn.btn-danger.btn-sm(ng-click="delete(category)") Delete

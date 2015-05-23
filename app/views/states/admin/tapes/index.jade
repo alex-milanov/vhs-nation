@@ -1,0 +1,43 @@
+
+h3 VHS Tapes Administration
+
+.row
+	.col-md-4: section.content
+		p(ng-if="tape._id") Editing {{ tape.name }}
+		p(ng-if="!tape._id") Creating new tape
+		form
+			.form-group
+				label Name
+				input.form-control(type="text",ng-model="tape.name")
+			.form-group
+				label Category
+				input.form-control(type="text",ng-model="tape.category")
+			.form-group
+				label Picture
+				input.form-control(type="text",ng-model="tape.picture")
+			.form-group
+				label Price
+				input.form-control(type="number",step="any",ng-model="tape.price")
+			.form-group
+				label Description
+				textarea.form-control(ng-model="tape.desc")
+			button.btn.btn-block.btn-primary(ng-click="save(tape)") Save
+			button.btn.btn-block.btn-default(ng-click="reset()") Reset
+
+	.col-md-8: section.content
+		table.table
+			thead
+				tr
+					th Name
+					th Category
+					th Price
+					th Actions
+			tbody
+				tr(ng-repeat="tape in tapes")
+					td {{ tape.name }}
+					td {{ tape.category }}
+					td {{ tape.price }}
+					td
+						a.btn.btn-primary.btn-sm(ng-click="edit(tape)") Edit
+						| &nbsp;
+						a.btn.btn-danger.btn-sm(ng-click="delete(tape)") Delete

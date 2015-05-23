@@ -29,6 +29,16 @@ app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', '$locationP
 				controller: 'AdminUsersCtrl',
 				templateUrl: '/states/admin/users/index.html'
 			})
+			.state('admin.tapes', {
+				url : '/tapes',
+				controller: 'AdminTapesCtrl',
+				templateUrl: '/states/admin/tapes/index.html'
+			})
+			.state('admin.categories', {
+				url : '/categories',
+				controller: 'AdminCategoriesCtrl',
+				templateUrl: '/states/admin/categories/index.html'
+			})
 
 		$locationProvider.hashPrefix('!');
 
