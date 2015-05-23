@@ -12,6 +12,10 @@ body {
 	background-size: cover;
 }
 
+a {
+	cursor: pointer;
+}
+
 .navbar-brand, h1, h2, h3, h4 {
 	font-family: $vhs-font-heading;
 
@@ -22,3 +26,11 @@ h1, h2, h3, h4 {
 	color: white;
 	padding: 10px;
 }
+
+section.content {
+	background: rgba(0,0,0,0.8);
+	color: white;
+	padding: 10px;
+}
+
+@import "inc/layout";

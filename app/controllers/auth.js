@@ -11,8 +11,8 @@ var User = mongoose.model('User');
 
 exports.register = function(req, res) {
 	
-	if (config.userRoles.indexOf(req.body.role) == -1)
-		delete req.body.role;
+	//if (config.userRoles.indexOf(req.body.role) == -1)
+	//		delete req.body.role;
 
 	// Init Variables
 	var user = new User(req.body);

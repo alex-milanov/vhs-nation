@@ -1,5 +1,48 @@
-extends layout.jade
+html
+	head
+		title VHS Nation
+		link(rel="stylesheet",href="/lib/font-awesome/css/font-awesome.css")
+		link(rel="stylesheet",href="/lib/bootstrap/dist/css/bootstrap.css")
+		link(rel="stylesheet",href="/css/style.css")
+	
+	body(ng-app="vhs-nation", ng-controller="MainCtrl")
 
-block content
-	h1 VHS Nation
-	h3 All the tapes you ever dreamed of in one place
+		nav.navbar.navbar-inverse
+			.container
+				.navbar-header
+					button.navbar-toggle.collapsed(data-toggle="collapse",data-target="#my-menu")
+						i.fa.fa-bars
+					a(ui-sref="home").navbar-brand VHS Nation
+
+				.collapse.navbar-collapse#my-menu
+					ul.nav.navbar-nav.navbar-left(ng-if="!loggedIn()")
+						li: a(href="/#!/catalogue") Catalogue
+						li: a(href="/#!/catalogue/promos") Promo Tapes
+					ul.nav.navbar-nav.navbar-left(ng-if="loggedIn()")
+						li: a(href="/#!/admin/tapes") VHS Tapes
+						li: a(href="/#!/admin/categories") Categories
+						li: a(href="/#!/admin/users") Users
+					ul.nav.navbar-nav.navbar-right(ng-if="!loggedIn()")
+						li: a(href="/#!/cart") Cart
+						li: a(ui-sref="login") Login
+					ul.nav.navbar-nav.navbar-right(ng-if="loggedIn()")
+						li: a {{ userData.name }}
+						li: a(ng-click="logout()") Logout
+
+		.container(ui-view="")
+
+		//- libs
+		script(src="/lib/jquery/dist/jquery.js")
+		script(src="/lib/bootstrap/dist/js/bootstrap.js")
+		//- angular
+		script(src="/lib/angular/angular.js")
+		script(src="/lib/angular-ui-router/release/angular-ui-router.js")
+		script(src="/lib/angular-resource/angular-resource.js")
+		script(src="/lib/angular-cookies/angular-cookies.js")
+		//- app
+		script(src="/js/app.js")
+		//- services
+		script(src="/js/services/auth.js")
+		//- controllers
+		script(src="/js/controllers/main.js")
+		//- page specific

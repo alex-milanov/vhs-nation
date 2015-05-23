@@ -9,7 +9,7 @@ module.exports = function(){
 		name: 'Admin',
 		email: 'admin',
 		role: 'admin',
-		password: 'ReallySillyLongPassword'
+		password: '12345678'
 	}
 
 	User.findOne({email:'admin', role: 'admin'}, function(err, foundUser){
