@@ -28,8 +28,12 @@
 				"crud": true,
 				"contentType": "json"
 			},
-			"users": {},
-			"products": {},
+			"users": {
+				"_meta": {
+					"collection": "users"
+				}
+			},
+			"tapes": {},
 			"categories": {}
 		}
 	}
