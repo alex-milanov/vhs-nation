@@ -13,10 +13,36 @@ section.content
 			button.btn-block.btn.btn-primary(ng-click="query(filters)") Search
 
 .row
-	.col-md-3.col-sm-4.col-xs-12(ng-repeat="tape in tapes | filter: filters.keywords")
+	.col-sm-7
+		.row
+			.col-md-3.col-sm-4.col-xs-12(ng-repeat="tape in tapes | filter: filters.keywords")
+				br
+				img(ng-src="{{ tape.picture }}",width="100%")
+				section.content
+					p: a(href="#") {{ tape.name }}
+					p {{ tape.price }}
+					p {{ tape.category }}
+					button.btn.btn-block.btn-primary(ng-click="addToCart(tape)") Add to cart
+	.col-sm-5
 		br
-		img(ng-src="{{ tape.picture }}",width="100%")
 		section.content
-			p: a(href="#") {{ tape.name }}
-			p {{ tape.price }}
-			p {{ tape.category }}
+			table.table
+				thead: tr
+					th(width="50%") Tape
+					th(width="15%") Price
+					th(width="15%") Amount
+					th(width="15%") Total
+				tbody
+					tr(ng-repeat="item in cart.items")
+						td {{ item.name }}
+						td {{ item.price }}
+						td
+							a.btn.btn-xs.btn-primary(ng-click="reduce(item)") - 
+							| &nbsp;{{ item.amount }}&nbsp;
+							a.btn.btn-xs.btn-primary(ng-click="increase(item)") + 
+						td {{ item.amount * item.price }}
+				tfoot
+					tr
+						td(align="right", colspan="3") Total: 
+						td {{ cart.total }}
+			button.btn.btn-block.btn-primary(ng-click="checkout()") Checkout
