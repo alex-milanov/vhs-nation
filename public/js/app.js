@@ -23,22 +23,26 @@ app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', '$locationP
 			})
 			.state('admin', {
 				url : '/admin',
-				templateUrl: '/states/admin/index.html'
+				templateUrl: '/states/admin/index.html',
+				access: ["admin"]
 			})
 			.state('admin.users', {
 				url : '/users',
 				controller: 'AdminUsersCtrl',
-				templateUrl: '/states/admin/users/index.html'
+				templateUrl: '/states/admin/users/index.html',
+				access: ["admin"]
 			})
 			.state('admin.tapes', {
 				url : '/tapes',
 				controller: 'AdminTapesCtrl',
-				templateUrl: '/states/admin/tapes/index.html'
+				templateUrl: '/states/admin/tapes/index.html',
+				access: ["admin"]
 			})
 			.state('admin.categories', {
 				url : '/categories',
 				controller: 'AdminCategoriesCtrl',
-				templateUrl: '/states/admin/categories/index.html'
+				templateUrl: '/states/admin/categories/index.html',
+				access: ["admin"]
 			})
 
 		$locationProvider.hashPrefix('!');

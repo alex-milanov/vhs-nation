@@ -1,5 +1,7 @@
 
-h3 Wellcome to VHS Nation!
+h3 
+	span(ng-if="loggedIn()") Hello {{ userData.name }}, 
+	| Wellcome to VHS Nation!
 
 section.content
 	form.row

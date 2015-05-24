@@ -1,0 +1,54 @@
+{
+	"left": [
+		{
+			"title": "Catalogue",
+			"access": ["anon","user"],
+			"uiSref": "home"
+		},
+		{
+			"title": "Promo Tapes",
+			"access": ["anon","user"]
+		},
+		{
+			"title": "Tapes",
+			"access": ["admin"],
+			"uiSref": "admin.tapes"
+		},
+		{
+			"title": "Categories",
+			"access": ["admin"],
+			"uiSref": "admin.categories"
+		},
+		{
+			"title": "Users",
+			"access": ["admin"],
+			"uiSref": "admin.users"
+		},
+		{
+			"title": "My Orders",
+			"access": ["user"],
+			"uiSref": "user.orders"
+		}
+	],
+	"right": [
+		{
+			"title": "My Profile",
+			"uiSref": "user.profile",
+			"access": ["admin","user"]
+		},
+		{
+			"title": "Cart",
+			"access": ["anon","user"]
+		},
+		{
+			"title": "Login",
+			"access": ["anon"],
+			"uiSref": "login"
+		},
+		{
+			"title": "Logout",
+			"access": ["admin","user"],
+			"ngClick": "logout"
+		}
+	] 
+}
