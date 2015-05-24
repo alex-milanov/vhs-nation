@@ -2,39 +2,9 @@
 @import url(http://fonts.googleapis.com/css?family=Cabin+Sketch:400,700);
 @import url(http://fonts.googleapis.com/css?family=Racing+Sans+One);
 
-$vhs-font-heading: "Racing Sans One", Helvetica, Arial, sasn-serif;
 
-html {
-}
 
-body {
-	background: url("../img/bg.jpg");
-	background-size: cover;
-}
-
-.content .table {
-	color: white;
-}
-
-a {
-	cursor: pointer;
-}
-
-.navbar-brand, h1, h2, h3, h4 {
-	font-family: $vhs-font-heading;
-
-}
-
-h1, h2, h3, h4 {
-	background: rgba(0,0,0,0.7);
-	color: white;
-	padding: 10px;
-}
-
-section.content {
-	background: rgba(0,0,0,0.8);
-	color: white;
-	padding: 10px;
-}
-
+@import "inc/helpers/vars";
+@import "inc/helpers/bootstrap_mod";
+@import "inc/common";
 @import "inc/layout";
